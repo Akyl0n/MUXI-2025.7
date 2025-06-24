@@ -1,0 +1,39 @@
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#header {
+  background-color: #8c8888;
+  width: 550px;
+}
+
+#sidebar2 {
+  background-color: #2e8424;
+  width: 150px;
+  float: left;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#content {
+  background-color: #FF0000;
+  width: 200px;
+  float: left;
+  padding: 5px 0;
+}
+
+#sidebar {
+  background-color: #f0d2e6;
+  width: 150px;
+  float: left;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#footer {
+  background-color: #ebdc0f;
+  width: 550px;
+  clear: both;
+}

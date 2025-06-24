@@ -1,0 +1,14 @@
+.pagination ul {
+  display: flex;
+  gap:10px;
+  list-style:none;
+  line-height: 25px;
+  margin: 0 5px;
+}
+.pagination a {
+  color: black;
+  text-shadow: 1px 0 0 #101011;
+  padding: 0 10px;
+  border-radius: 2px;
+  box-shadow: 0 1px 0 #5a5b5c inset,0 1px 0 #080808;
+}

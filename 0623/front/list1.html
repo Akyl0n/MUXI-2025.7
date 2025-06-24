@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/submit" method="post">
+        <label for="headpicture">头像 </label>
+        <input type="file" id="headpicture" name="headpicture" accept="image/*">
+        <br>
+        <label for="name">昵称 </label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="study">学历 </label>
+        <select id="study" name="study">
+            <option value="junior-college">大专</option>
+            <option value="bachelor">本科</option>
+        </select>
+        <br>
+        <label for="gender">性别 </label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">男</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">女</label>
+        <br>
+        <label for="hobby">爱好 </label>
+        <input type="checkbox" id="movie" name="hobby" value="movie">
+        <label for="movie">电影</label>
+        <input type="checkbox" id="camera" name="hobby" value="camera">
+        <label for="camera">摄影</label>
+        <input type="checkbox" id="music" name="hobby" value="music">
+        <label for="music">音乐</label>
+        <input type="checkbox" id="reading" name="hobby" value="reading">
+        <label for="reading">阅读</label>
+        <br>
+        <label for="note">签名 </label>
+        <br>
+        <textarea id="note" name="note" rows="4" cols="50"></textarea>
+        <br>
+        <button type="save">保存</button>
+    </form>
+</body>
+</html>

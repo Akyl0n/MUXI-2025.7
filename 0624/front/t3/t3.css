@@ -1,0 +1,15 @@
+.container{
+    position:relative;
+    width:100vw;
+    height:100vh;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.rectangle{
+    position:relative;
+    width: 300px;
+    height: 200px;
+    background-color: #ccc;
+}
