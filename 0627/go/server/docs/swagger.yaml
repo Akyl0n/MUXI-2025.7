@@ -1,0 +1,141 @@
+basePath: /
+definitions:
+  main.Book:
+    properties:
+      author:
+        type: string
+      id:
+        type: string
+      stock:
+        type: string
+      title:
+        type: string
+    type: object
+  main.Response:
+    properties:
+      data: {}
+      message:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: This is a sample server for managing books.
+  title: Book Management API
+  version: "1.0"
+paths:
+  /books:
+    get:
+      consumes:
+      - application/json
+      description: 搜索书籍
+      parameters:
+      - description: 书籍信息
+        in: body
+        name: book
+        required: true
+        schema:
+          $ref: '#/definitions/main.Book'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: success
+          schema:
+            allOf:
+            - $ref: '#/definitions/main.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/main.Book'
+              type: object
+        "404":
+          description: book not found
+          schema:
+            $ref: '#/definitions/main.Response'
+      summary: 搜索书籍
+      tags:
+      - 图书
+    post:
+      consumes:
+      - application/json
+      description: 传入书籍信息新增书籍
+      parameters:
+      - description: 书籍信息
+        in: body
+        name: book
+        required: true
+        schema:
+          $ref: '#/definitions/main.Book'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: book already exists
+          schema:
+            $ref: '#/definitions/main.Response'
+        "400":
+          description: 400错误
+          schema:
+            $ref: '#/definitions/main.Response'
+      summary: 添加书籍
+      tags:
+      - 图书
+  /books/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: 删除书籍
+      parameters:
+      - description: 书籍ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Book deleted
+          schema:
+            $ref: '#/definitions/main.Response'
+        "404":
+          description: Book not exists
+          schema:
+            $ref: '#/definitions/main.Response'
+      summary: 删除书籍
+      tags:
+      - 图书
+    put:
+      consumes:
+      - application/json
+      description: 更新书籍
+      parameters:
+      - description: 书籍ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Book updated
+          schema:
+            allOf:
+            - $ref: '#/definitions/main.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/main.Book'
+              type: object
+        "400":
+          description: 400错误
+          schema:
+            $ref: '#/definitions/main.Response'
+        "404":
+          description: Book not found
+          schema:
+            $ref: '#/definitions/main.Response'
+      summary: 更新书籍
+      tags:
+      - 图书
+swagger: "2.0"

@@ -64,6 +64,7 @@ func SearchBook(c *gin.Context) {
 			booklist = append(booklist, book)
 		}
 		c.JSON(http.StatusOK, booklist)
+		return
 	}
 	if book, exists := books[id]; !exists {
 		c.JSON(http.StatusNotFound, gin.H{"error": "book not found"})
